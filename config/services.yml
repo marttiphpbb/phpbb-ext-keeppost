@@ -1,0 +1,31 @@
+services:
+    marttiphpbb.keeppost.store:
+        class: marttiphpbb\keeppost\service\store
+        arguments:
+            - '@config_text'
+            - '@cache.driver'
+
+    marttiphpbb.keeppost.config:
+        class: marttiphpbb\keeppost\service\config
+        arguments:
+            - '@marttiphpbb.keeppost.store'
+
+    marttiphpbb.keeppost.available:
+        class: marttiphpbb\keeppost\service\available
+        arguments:
+            - '@ext.manager'
+            - '%core.root_path%'
+
+    marttiphpbb.keeppost.load:
+        class: marttiphpbb\keeppost\service\load
+        arguments:
+            - '@marttiphpbb.keeppost.config'
+            - '@marttiphpbb.keeppost.available'
+            - '%core.root_path%'
+
+    marttiphpbb.keeppost.listener:
+        class: marttiphpbb\keeppost\event\listener
+        arguments:
+            - '@marttiphpbb.keeppost.load'
+        tags:
+            - { name: event.listener }

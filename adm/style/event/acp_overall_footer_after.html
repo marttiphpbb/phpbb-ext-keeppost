@@ -1,0 +1,4 @@
+{%- if marttiphpbb_keeppost and not definition.INCLUDED_KEEPPOST -%}
+    {%- DEFINE INCLUDED_KEEPPOST = true -%}
+    {%- include '@marttiphpbb_keeppost/include/keeppost.html' with {'c': marttiphpbb_keeppost} only -%}
+{%- endif -%}
