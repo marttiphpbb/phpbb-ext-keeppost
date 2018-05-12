@@ -6,8 +6,8 @@ phpBB 3.2+ PHP 7+
 
 ## Features
 
-This extension provides the [Keep Post](http://keeppost.net/) javascript library for use in phpBB.
-Some settings are provided in the ACP, like "Style" and "Key bindings".
+When the session expires before hitting the "submit" whilst posting and having to login again, this extension stores the data of the post form in the browser (sessionStorage) and restores it when returning to the posting page.
+(In the normal behaviour of phpBB 3.2+ the form will be empty upon returning).
 
 ## Quick Install
 
@@ -16,7 +16,6 @@ You can install this on the latest release of phpBB 3.2 by following the steps b
 * Create `marttiphpbb/keeppost` in the `ext` directory.
 * Download and unpack the repository into `ext/marttiphpbb/keeppost`
 * Enable `Keep Post` in the ACP at `Customise -> Manage extensions`.
-* You can start editing the Keep Post in the Forum ACP for each Forum.
 
 ## Uninstall
 
@@ -30,5 +29,3 @@ You can install this on the latest release of phpBB 3.2 by following the steps b
 ## License
 
 [GPL-2.0](license.txt)
-
-## Screenshots
