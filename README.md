@@ -1,13 +1,15 @@
 # PhpBB Extension - marttiphpbb Keep Post
 
+[Topic on phpBB.com](https://www.phpbb.com/community/viewtopic.php?f=456&t=2471691)
+
 ## Requirements
 
 phpBB 3.2+ PHP 7+
 
 ## Features
 
-When the session expires before hitting the "submit" whilst posting and having to login again, this extension stores the data of the post form in the browser (sessionStorage) and restores it when returning to the posting page.
-(In the normal behaviour of phpBB 3.2+ the form will be empty upon returning).
+When you have to login again because the session expires before hitting the "submit" whilst posting, this extension stores the data of the post form in the browser (sessionStorage) and restores it when returning to the posting page. (In the normal behaviour of phpBB 3.2+ the form will be empty upon returning).
+Works as well in the Private Messages.
 
 ## Quick Install
 
