@@ -8,40 +8,32 @@
 namespace marttiphpbb\keeppost\event;
 
 use phpbb\event\data as event;
-use marttiphpbb\keeppost\service\load;
-use marttiphpbb\keeppost\util\cnst;
+use phpbb\template\template;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class listener implements EventSubscriberInterface
 {
-	/** @var load */
-	private $load;
+	/** @var template */
+	private $template;
 
 	/**
-	 * @param load
+	 * @param template
 	*/
-	public function __construct(load $load)
+	public function __construct(template $template)
 	{
-		$this->load = $load;
+		$this->template = $template;
 	}
 
 	static public function getSubscribedEvents()
 	{
 		return [
-			'core.twig_environment_render_template_before'
-				=> 'core_twig_environment_render_template_before',
+			'core.login_box_before'
+				=> 'core_login_box_before',
 		];
 	}
 
-	public function core_twig_environment_render_template_before(event $event)
+	public function core_login_box_before(event $event)
 	{
-		if (!$this->load->is_enabled())
-		{
-			return;
-		}
-
-		$context = $event['context'];
-		$context['marttiphpbb_keeppost'] = $this->load->get_listener_data();
-		$event['context'] = $context;
+		$this->template->assign_var('S_MARTTIPHPBB_KEEPPOST_LOGIN', true);
 	}
 }

@@ -1,0 +1,7 @@
+{%- if not SCRIPT_NAME == 'posting' and not SCRIPT_NAME == 'ucp' -%}
+    {%- INCLUDEJS '@marttiphpbb_keeppost/keeppost_remove.js' -%}
+{%- endif -%}
+{%- if S_MARTTIPHPBB_KEEPPOST_LOGIN -%}
+    {%- INCLUDEJS '@marttiphpbb_keeppost/keeppost_login.js' -%}
+{%- endif -%}
+

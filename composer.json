@@ -2,7 +2,7 @@
 	"name": "marttiphpbb/keeppost",
 	"type": "phpbb-extension",
 	"description": "Keep Post Extension for phpBB 3.2",
-	"keywords": ["phpbb", "extension", "keeppost", "helper ext"],
+	"keywords": ["phpbb", "extension", "keeppost"],
 	"homepage": "https://github.com/marttiphpbb/phpbb-ext-keeppost",
 	"version": "0.1.0",
 	"time": "2018-05-07",
