@@ -13,12 +13,8 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class listener implements EventSubscriberInterface
 {
-	/** @var template */
 	private $template;
 
-	/**
-	 * @param template
-	*/
 	public function __construct(template $template)
 	{
 		$this->template = $template;
